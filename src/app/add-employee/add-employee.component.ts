@@ -13,20 +13,20 @@
 
 
 // login.component.ts
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-employee',
   templateUrl: './add-employee.component.html',
-  styleUrl: './add-employee.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './add-employee.component.css'
 })
 
 export class AddEmployeeComponent {
   employeeForm: FormGroup;
-  maxDate: Date = new Date();
+  groups: string[] = ['Group1', 'Group2', 'Group3', 'Group4', 'Group5', 'Group6', 'Group7', 'Group8', 'Group9', 'Group10'];
+
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.employeeForm = this.fb.group({
@@ -36,8 +36,8 @@ export class AddEmployeeComponent {
       email: ['', [Validators.required,Validators.email]],
       basicSalary: ['', [Validators.required]],
       birthDate: ['', [Validators.required,this.validateBirthdate.bind(this)]],
+      group: ['', Validators.required],
     });
-    this.maxDate.setHours(23, 59, 59, 999);
   }
 
   triggerValidation(controlName: string) {

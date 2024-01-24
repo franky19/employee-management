@@ -1,5 +1,9 @@
 <div style="padding:25px;">
-    <h2>Employee List</h2>
+    <!-- <h2>Employee List</h2> -->
+    <div class="d-flex" style="justify-content: space-between;">
+        <h2>Employee List</h2>
+        <button type="button" class="btn btn-primary" (click)="addNewEmployee()" style="width: 15%;">Add New Employee</button>
+    </div>
     <table>
         <thead>
           <tr>
@@ -30,8 +34,8 @@
             <td>{{ employee.description }}</td>
             <!-- employee-list.html -->
             <td class="td-action">
-                <button type="button" class="btn btn-warning" (click)="myFunction()">Edit</button>
-                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-warning" (click)="editEmployee(employee.id)">Edit</button>
+                <button type="button" class="btn btn-danger">Delete</button>
             </td>
   
           </tr>

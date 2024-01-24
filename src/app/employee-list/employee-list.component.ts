@@ -95,14 +95,14 @@ export class EmployeeListComponent implements OnInit {
     this.router.navigate(['/employee', employeeId]);
   }
 
-  goToNextPage(): void {
-    // Assuming you have a route named '/page/2'
-    this.router.navigate(['/page/2']);
+  addNewEmployee():void{
+    this.router.navigate(['add-employee']);
   }
 
+
   myFunction() {
-    this.router.navigate(['login']);
-    // console.log('Button clicked!');
+    // this.router.navigate(['login']);
+    console.log('Button clicked!');
   }
 
   getPages(): number[] {
