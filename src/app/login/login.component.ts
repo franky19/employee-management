@@ -1,42 +1,3 @@
-// import { CommonModule } from '@angular/common';
-// import { Component } from '@angular/core';
-// import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-
-// @Component({
-//   selector: 'app-login',
-//   templateUrl: './login.component.html',
-//   styleUrls: ['./login.component.css'],
-//   // imports: [CommonModule,  ReactiveFormsModule],
-// })
-
-// export class LoginComponent {
-//   loginForm: FormGroup;
-
-//   constructor(private formBuilder: FormBuilder) {
-//     this.loginForm = this.formBuilder.group({
-//       username: ['', Validators.required],
-//       password: ['', Validators.required],
-//     });
-//   }
-
-//   get loginControls() {
-//     return this.loginForm.controls;
-//   }
-
-//   onSubmit() {
-//     console.log("submit failed")
-//     // if (!this.loginForm.valid) {
-//     //   console.log("submit not failed")
-//     //   return;
-//     // }
-//     // const user: User.IUserCredential = {
-//     //   username: this.loginControls.username.value,
-//     //   password: this.loginControls.password.value,
-//     // };
-//     // this.authService.login(user);
-//   }
-
-// }
 
 // login.component.ts
 import { Component } from '@angular/core';
@@ -71,7 +32,7 @@ export class LoginComponent {
     if (this.myForm.valid) {
       // Do something with the form data
       console.log(this.myForm.value);
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/employee']);
       return
       // Navigate to the 'dashboard' route
       // this.router.navigate(['/dashboard']);
