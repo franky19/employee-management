@@ -20,7 +20,7 @@ import { NumericInputDirective } from './component/numeric.component';
     BrowserAnimationsModule
   ],
 //   bootstrap: [LoginComponent],
-  bootstrap:[AddEmployeeComponent],
+  bootstrap:[LoginComponent],
   exports: [RouterModule],
 })
 export class AppModule {}

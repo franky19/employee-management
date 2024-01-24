@@ -1,18 +1,4 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-add-employee',
-//   standalone: true,
-//   imports: [],
-  // templateUrl: './add-employee.component.html',
-  // styleUrl: './add-employee.component.css'
-// })
-// export class AddEmployeeComponent {
-
-// }
-
-
-// login.component.ts
+// add-employee.component.ts
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
