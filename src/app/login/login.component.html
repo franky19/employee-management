@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <form [formGroup]="myForm" (submit)="onSubmit()">
+                <div class="mb-3">
+                  <label for="username" class="form-label">Username:</label>
+                  <input type="text" id="username" formControlName="username" class="form-label" (input)="triggerValidation('username')">
+                  <ng-container *ngIf="myForm?.get('username')?.hasError('required') && myForm?.get('username')?.touched">
+                    <span style="color:red">Username is required.</span>
+                  </ng-container>
+                </div>
+                <div class="mb-3">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" formControlName="password" (input)="triggerValidation('password')">
+                  <div *ngIf="myForm?.get('password')?.hasError('required') && myForm?.get('password')?.touched">
+                    <span style="color:red">Password is required.</span>
+                  </div>
+                  <div *ngIf="myForm?.get('password')?.hasError('minlength') && myForm?.get('password')?.touched">
+                    <span style="color:red">Password must be at least 6 characters long.</span>
+                  </div>
+                </div>
+               
+                <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid || false">Submit</button>
+              </form>
+        </div>
+      </div>
+</div>
