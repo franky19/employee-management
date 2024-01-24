@@ -1,0 +1,30 @@
+.card{
+    width: 18rem;
+    margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
+
+.container{
+    margin-top: 15%;
+    display: flex;
+}
+
+.form{
+    margin: auto;
+}
+
+input{
+    width: 100%;
+}
+
+/* employee-form.component.css */
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  

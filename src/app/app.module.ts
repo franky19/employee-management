@@ -7,9 +7,11 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { NumericInputDirective } from './component/numeric.component';
 
 @NgModule({
-  declarations: [LoginComponent,EmployeeListComponent,EmployeeDetailComponent],
+  declarations: [LoginComponent,EmployeeListComponent,EmployeeDetailComponent,AddEmployeeComponent,NumericInputDirective],
   imports: [
     BrowserModule,
     // ReactiveFormsModule,
@@ -17,7 +19,8 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
     RouterModule.forRoot(routes),
     BrowserAnimationsModule
   ],
-  bootstrap: [LoginComponent],
+//   bootstrap: [LoginComponent],
+  bootstrap:[AddEmployeeComponent],
   exports: [RouterModule],
 })
 export class AppModule {}

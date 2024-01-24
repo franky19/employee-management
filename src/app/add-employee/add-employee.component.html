@@ -1,1 +1,57 @@
-<p>add-employee works!</p>
+<div class="container">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <form [formGroup]="employeeForm" (submit)="onSubmit()">
+                <div class="mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" id="username" formControlName="username" class="form-label" (input)="triggerValidation('username')">
+                  <ng-container *ngIf="employeeForm?.get('username')?.hasError('required') && employeeForm?.get('username')?.touched">
+                    <span style="color:red">Username is required.</span>
+                  </ng-container>
+                </div>
+                <div class="mb-3">
+                    <label for="firstname" class="form-label">First Name</label>
+                    <input type="text" id="firstname" formControlName="firstname" class="form-label" (input)="triggerValidation('firstname')">
+                    <ng-container *ngIf="employeeForm?.get('firstname')?.hasError('required') && employeeForm?.get('firstname')?.touched">
+                      <span style="color:red">First Name is required.</span>
+                    </ng-container>
+                </div>
+                <div class="mb-3">
+                    <label for="lastname" class="form-label">Last Name</label>
+                    <input type="text" id="lastname" formControlName="lastname" class="form-label" (input)="triggerValidation('lastname')">
+                    <ng-container *ngIf="employeeForm?.get('lastname')?.hasError('required') && employeeForm?.get('lastname')?.touched">
+                      <span style="color:red">Last Name is required.</span>
+                    </ng-container>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" formControlName="email" class="form-label" (input)="triggerValidation('email')">
+                    <ng-container *ngIf="employeeForm?.get('email')?.hasError('required') && employeeForm?.get('email')?.touched">
+                      <span style="color:red">Email is required.</span>
+                    </ng-container>
+                    <ng-container *ngIf="employeeForm?.get('email')?.hasError('email') && employeeForm?.get('email')?.touched">
+                        <span style="color:red">Invalid email format.</span>
+                    </ng-container>
+                </div>
+                <div class="mb-3">
+                    <label for="basicSalary" class="form-label">Basic Salary</label>
+                    <input type="text" id="basicSalary" formControlName="basicSalary" class="form-label" (input)="triggerValidation('basicSalary')" appNumericInput>
+                    <ng-container *ngIf="employeeForm?.get('basicSalary')?.hasError('required') && employeeForm?.get('basicSalary')?.touched">
+                      <span style="color:red">Basic Salary is required.</span>
+                    </ng-container>
+                </div>
+                <div class="mb-3">
+                    <label>Birth Date:</label>
+                    <input type="date" formControlName="birthDate" class="form-control"(input)="triggerValidation('birthDate')">
+                    <ng-container *ngIf="employeeForm?.get('birthDate')?.hasError('required') && employeeForm?.get('birthDate')?.touched">
+                      <span style="color:red">Birth Date is required.</span>
+                    </ng-container>
+                    <ng-container *ngIf="employeeForm?.get('birthDate')?.hasError('invalidBirthdate') && employeeForm?.get('birthDate')?.touched">
+                        <span style="color:red">Birth Date cannot be greater than today.</span>
+                      </ng-container>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!employeeForm.valid || false">Submit</button>
+              </form>
+        </div>
+      </div>
+</div>
